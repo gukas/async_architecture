@@ -1,0 +1,30 @@
+Actor ? Account
+Command ? Login to inventory app
+Data ? ???
+Event ? Account.Logined 
+
+Actor ? Account
+Command ? create task
+Data ? task + Account public id
+Event ? Task.Created
+
+Actor ? Admin, manager user (user with "admin" or ?manager? role)
+Command ? assign task
+Data ? task + Account public id
+Event ? Task.assigned
+
+Actor ? Account
+Command ? close task
+Data ? task + Account public id
+Event ? Task.Closed
+
+Actor ? Scheduler
+Command ? Count sallary
+Data ? task + Account public id
+Event ? Balance.Counded
+
+Actor ? Balance.Counded
+Command ? Send email
+Data ? sallary + Account public id + email
+Event ? Balance.Sended
+
